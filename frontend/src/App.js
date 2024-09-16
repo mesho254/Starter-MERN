@@ -9,6 +9,8 @@ import Footer from './components/Layout/Footer';
 
 
 const HomePage = lazy(() => import('./pages/Home'));
+const Profile = lazy(() => import('./pages/Profile'))
+
 
 const Login = lazy(() => import('./pages/Login'));
 const ForgotPassword = lazy(() => import('./components/Auth/ForgotPassword'));
@@ -29,12 +31,18 @@ function App() {
         <Skeleton active avatar paragraph={{ rows: 4 }} />
       </div></div>}>
         <Routes>
+          {/* Other Routes */}
           <Route path='/' element={<HomePage/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+
+
+          {/* Authentication Routes*/}
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/forgot-password' element={<ForgotPassword/>}/>
           <Route path='/password-reset/:id/:token' element={<ResetPassword/>}/>
 
+            {/* Error Boundary Route*/}
           <Route path='*' element={<ErrorBoundary/>}/>
         </Routes>
      </Suspense>

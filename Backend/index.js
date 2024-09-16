@@ -5,7 +5,7 @@ const cors = require('cors');
 const corsOptions = { origin: "*", credentials: true, optionSuccessStatus: 200 };
 const connectDB = require('./Config/db');
 const authRoutes = require('./Routes/authRoutes');
-const usersRoutes = require('./Routes/usersRoutes')
+const usersRoutes = require('./Routes/userRoutes')
 
 
 dotenv.config();
